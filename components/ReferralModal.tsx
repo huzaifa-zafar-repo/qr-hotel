@@ -105,6 +105,7 @@ export const ReferralModal: React.FC<ReferralModalProps> = ({
                     src="/assets/3dcups.png"
                     alt="Green Coffee Cups with Floating Hearts"
                     fill
+                    sizes="(max-width: 640px) 250px, 300px"
                     className="object-contain drop-shadow-xl"
                     priority
                   />

@@ -76,6 +76,7 @@ export const SpecialModal: React.FC<SpecialModalProps> = ({
                     src={dish.image}
                     alt={dish.title}
                     fill
+                    sizes="(max-width: 640px) 250px, 300px"
                     className="object-contain drop-shadow-xl"
                     priority
                   />

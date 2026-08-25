@@ -92,6 +92,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     src="/assets/3dreview.png"
                     alt="3D Speech Bubble with Gold Star"
                     fill
+                    sizes="(max-width: 640px) 250px, 300px"
                     className="object-contain drop-shadow-xl"
                     priority
                   />
