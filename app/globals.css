@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-serif: "Playfair Display", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-script: "Great Vibes", cursive;
+
+    /* Theme colors based on reference screenshots */
+    --bg-warm: #FAF6F0;
+    --bg-cream: #F5EFE6;
+    --bg-ivory: #FDFCF9;
+    --text-primary: #2C221E;
+    --text-secondary: #75675E;
+    --gold-accent: #C5A059;
+    --gold-light: #EADCB9;
+
+    /* Card accent tones */
+    --card-peach-bg: #FBF0E4;
+    --card-peach-border: #F3DFCC;
+    --card-emerald-bg: #EAF2EC;
+    --card-emerald-border: #D1E3D6;
+    --card-lavender-bg: #F4EFEB;
+    --card-lavender-border: #E5D9EE;
+  }
+
+  body {
+    background-color: var(--bg-warm);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom font utility classes */
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+/* Glassmorphism and realistic 3D shadows */
+.glass-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.glass-card {
+  background: rgba(253, 252, 249, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.shadow-soft-3d {
+  box-shadow:
+    0 10px 30px -5px rgba(60, 40, 20, 0.06),
+    0 20px 40px -10px rgba(60, 40, 20, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.shadow-card-hover {
+  box-shadow:
+    0 20px 40px -10px rgba(80, 50, 25, 0.12),
+    0 12px 24px -6px rgba(80, 50, 25, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+
+.shadow-inner-soft {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+/* Hide scrollbars for clean presentation */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Perspective 3D preserve */
+.preserve-3d {
+  transform-style: preserve-3d;
 }
